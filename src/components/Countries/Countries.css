@@ -1,0 +1,22 @@
+.countries {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 15px;
+    padding: 10px;
+}
+
+
+@media screen and (min-width: 576px) {
+    .countries {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .countries {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 25px;
+    }
+}
