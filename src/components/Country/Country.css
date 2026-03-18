@@ -9,3 +9,40 @@
 .country-visited{
     background-color: rebeccapurple;
 }
+
+/* বাটনগুলোর প্যারেন্ট ডিভ (Container) */
+.button-container {
+    display: flex; /* বাটনগুলোকে পাশাপাশি রাখবে */
+    gap: 15px;    /* বাটন দুটির মাঝখানে ১৫ পিক্সেল গ্যাপ তৈরি করবে */
+    margin-top: 15px;
+    justify-content: center; /* বাটনগুলোকে মাঝখানে আনবে (ঐচ্ছিক) */
+}
+
+/* বাটনের কমন ডিজাইন */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* অ্যানিমেশন যোগ করবে */
+}
+
+/* আলাদা আলাদা কালার ডিজাইন */
+.btn-visited {
+    background-color: #27ae60; /* সবুজ রঙ */
+    color: white;
+}
+
+.btn-details {
+    background-color: #3498db; /* নীল রঙ */
+    color: white;
+}
+
+/* হোভার ইফেক্ট (মাউস নিলে যা হবে) */
+.btn:hover {
+    transform: scale(1.05); /* হালকা বড় হবে */
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './Country.css'
 
-const Country = ( { country, handleVisitedCountries= {handleVisitedCountries}}) => {
-    
+const Country = ({ country, handleVisitedCountries, handleVisitedFlag = { handleVisitedCountries } }) => {
+
     // console.log(country )
 
     console.log(handleVisitedCountries)
-    const[visited, setVisited] = useState(false);
+    const [visited, setVisited] = useState(false);
 
-    const handleVisited = () =>{
+    const handleVisited = () => {
 
         //----------------------- first system -----------------------------
 
@@ -33,21 +33,25 @@ const Country = ( { country, handleVisitedCountries= {handleVisitedCountries}}) 
 
     }
     return (
-        
+
         // <div className={ `country border-lg text-center ${visited ? 'country-visited' : 'country-not-visited'} `}> 
-        <div className={ `country ${visited && 'country-visited'} `}>
+        <div className={`country ${visited && 'country-visited'} `}>
             <img src={country.flags.flags.png} alt={country.flags.flags.png} />
             <h3>Name: {country.name.common}</h3>
             <p>Capital: {country.capital.capital}</p>
             <p>Population: {country.population.population}</p>
             {/* <p>languages: {languageNames}}</p> */}
-            <p>Area: {country.area.area} { country.area.area > 300000 ? "Big Country " : 'Small country' }  </p>
+            <p>Area: {country.area.area} {country.area.area > 300000 ? "Big Country " : 'Small country'}  </p>
             <p>Region: {country.region.region}</p>
             <p>Continents: {country.continents.continents}</p>
 
-            <button onClick={handleVisited}> 
-                {visited ? 'Visited' : 'Not Visited'}
-            </button>
+            <div className='button-container'>
+                <button className="btn btn-visited" onClick={handleVisited}>
+                    {visited ? 'Visited' : 'Not Visited'}
+                </button>
+                <button className="btn btn-details" onClick={() => {handleVisitedFlag(country.flags.flags.png)}}>Add Visited Flag</button>
+            </div>
+            
         </div>
     );
 };
